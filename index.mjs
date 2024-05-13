@@ -1,3 +1,6 @@
+import wrapper from './lib/index.js'
+import * as noble from './lib/noble.mjs'
+
 export const {
   contextRandomize,
   privateKeyVerify,
@@ -18,4 +21,4 @@ export const {
   ecdsaRecover,
   ecdsaVerify,
   ecdh,
-} = (await import("./lib/index.js")).default(await import("./lib/noble.mjs"));
+} = (wrapper(noble));
